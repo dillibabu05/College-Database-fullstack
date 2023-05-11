@@ -1,0 +1,1118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Bootstrap 4 Admin &amp; Dashboard Template">
+	<meta name="author" content="Bootlab">
+
+	<title>ACADEMIEZ 1.0 EDCUCATION SOFTWARE</title>
+
+	<link rel="canonical" href="https://appstack.bootlab.io/dashboard-default.html">
+	<link rel="shortcut icon" href="img/favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+	<!-- Choose your prefered color scheme -->
+	<!-- <link href="css/light.css" rel="stylesheet"> -->
+	<!-- <link href="css/dark.css" rel="stylesheet"> -->
+
+	<!-- BEGIN SETTINGS -->
+	<!-- Remove this after purchasing -->
+	<link class="js-stylesheet" href="{% static 'dashboard/css/light.css' %}" rel="stylesheet">
+	<!-- END SETTINGS -->
+</head>
+<!--
+  HOW TO USE: 
+  data-theme: default (default), dark, light
+  data-layout: fluid (default), boxed
+  data-sidebar-position: left (default), right
+  data-sidebar-behavior: sticky (default), fixed, compact
+-->
+
+<body data-theme="default" data-layout="fluid" data-sidebar-position="left" data-sidebar-behavior="sticky">
+	<div class="wrapper">
+		<nav id="sidebar" class="sidebar">
+			<div class="sidebar-content js-simplebar">
+				.
+
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">
+					<img class="mx-auto d-block" src="{% static 'Landing/icon/education.png' %}" alt="40%">
+					</li>
+					    <div style="padding-left:7%"  class="first">
+							<img  src="{{logger_data.profile_picture.url}}" width="64" height="64" class="rounded-circle mt-2" alt="Angelica Ramos">
+							<bold style="padding-left:3%; font-family:Times New Roman; font-size: 20px; color: deeppink;" >Welcome {{logger_data.user_name}} id:{{logger_data.id}}</bold>
+					    </div>
+
+					<li class="sidebar-item active">
+						<a href="#dashboards"  class="sidebar-link">
+              <i class="align-middle" data-feather="sliders"></i> <span style="font-family:Times New Roman; font-size: 36px;" class="align-middle" class="text-info">Dashboards</span> 
+              <span class="badge badge-sidebar-primary"></span>
+            </a>
+						
+					</li>
+
+					<li class="sidebar-item">
+						<a href="#documentation" data-toggle="collapse" class="sidebar-link collapsed">
+              <i class="align-middle" data-feather="book-open"></i> <span style="font-family:Times New Roman; font-size: 18px;" class="align-middle">Front Office</span>
+            </a>
+						<ul id="documentation" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="/tables_bootstrap/{{logger_data.id}}">>> Admission Enquiry</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/visitorbook/{{logger_data.id}}">>> Visitor Book</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a href="#auth" data-toggle="collapse" class="sidebar-link collapsed">
+              <i class="align-middle" data-feather="users"></i> <span style="font-family:Times New Roman; font-size: 18px;" class="align-middle">Student Information</span>
+              <span  class="badge badge-sidebar-secondary"></span>
+            </a>
+						<ul id="auth" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="/studentview/{{logger_data.id}}">>> Student Details</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/studentadmision/{{logger_data.id}}">>> Student Admission</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/onlineadmission/{{logger_data.id}}">>> Online Admission</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a href="#pages" data-toggle="collapse" class="sidebar-link collapsed">
+              <i class="align-middle" data-feather="layers"></i> <span style="font-family:Times New Roman; font-size: 18px;" class="align-middle">Fees Collection</span>
+            </a>
+						<ul id="pages" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="/feesdetails/{{logger_data.id}}">>> Collection fees</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/stufeescollect/{{logger_data.id}}">>> Search Fees Payment</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/feesdiscount/{{logger_data.id}}">>> Fees Discount</a></li>
+						</ul>
+					</li>
+
+					<li class="sidebar-item">
+						<a href="#multi-1" data-toggle="collapse" class="sidebar-link collapsed">
+              <i class="align-middle" data-feather="dollar-sign"></i><span style="font-family:Times New Roman; font-size: 18px;" class="align-middle">Income</span>
+            </a>
+						<ul id="multi-1" class="sidebar-dropdown list-unstyled collapse">
+							<li class="sidebar-item"><a class="sidebar-link" href="/incomedetails/{{logger_data.id}}">>> Income details</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a href="#ui" data-toggle="collapse" class="sidebar-link collapsed">
+              <i class="align-middle" data-feather="credit-card"></i> <span style="font-family:Times New Roman; font-size: 18px;" class="align-middle">Expenses</span>
+            </a>
+						<ul id="ui" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="/expensesdetails/{{logger_data.id}}">>> Expenses Details </a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a href="#forms" data-toggle="collapse" class="sidebar-link collapsed">
+              <i class="align-middle" data-feather="check-square"></i> <span style="font-family:Times New Roman; font-size: 18px;" class="align-middle">Attendance</span>
+            </a>
+						<ul id="forms" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="/studentattendence/{{logger_data.id}}">>> Student Attendence</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/studentapprove/{{logger_data.id}}">>> Student Approved leave</a></li>
+						</ul>
+					</li>
+					<!-- <li class="sidebar-item">
+						<a href="#form-plugins" data-toggle="collapse" class="sidebar-link collapsed">
+              <i class="align-middle" data-feather="map"></i> <span style="font-family:Times New Roman; font-size: 18px;" class="align-middle">Examinations</span>
+            </a>
+						<ul id="form-plugins" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="/Examgroup">>> Exam Group list </a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/examlistpage">>> Exam list </a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/exschedulelist">>> Exam Schedule</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/Examresult">>>Semester Exam Result</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a href="#datatables" data-toggle="collapse" class="sidebar-link collapsed">
+              <i class="align-middle" data-feather="rss"></i> <span style="font-family:Times New Roman; font-size: 18px;" class="align-middle">Online Examinations</span>
+            </a>
+						<ul id="datatables" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="/onlineexamsch">>>Online Exam Schedule</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/onlinesemexamfile">>>Online Semester Exam</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a href="#maps" data-toggle="collapse" class="sidebar-link collapsed">
+              <i class="align-middle" data-feather="award"></i> <span style="font-family:Times New Roman; font-size: 18px;" class="align-middle">Academics</span>
+            </a>
+						<ul id="maps" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="/classtimetable">>> Class Timetable</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/teachertimetable">>> Teachers Timetable</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/subjectlist">>> Subject</a></li>
+						</ul>
+					</li>
+						<li class="sidebar-item">
+							<a href="#multi-2" data-toggle="collapse" class="sidebar-link collapsed">
+					<i class="align-middle" data-feather="briefcase"></i><span style="font-family:Times New Roman; font-size: 18px;" class="align-middle">Human Resource</span>	
+			</a>
+							<ul id="multi-2" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+								<li class="sidebar-item"><a class="sidebar-link" href="/staffdirtlist">>> Staff Directory</a></li>
+								<li class="sidebar-item"><a class="sidebar-link" href="/staffattencelist">>> Staff Attendance</a></li>
+								<li class="sidebar-item"><a class="sidebar-link" href="/satffleaveforml">>>Staff Leave Form</a></li>
+								</li>
+							</ul>
+						</li> -->
+							<li class="sidebar-item">
+								<a href="#multi-3-1" data-toggle="collapse" class="sidebar-link collapsed">
+									<i class="align-middle" data-feather="book"></i><span style="font-family:Times New Roman; font-size: 18px;" class="align-middle">Library</span>
+					</a>
+								<ul id="multi-3-1" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+									<li class="sidebar-item"><a class="sidebar-link" href="/librarybooklist/{{logger_data.id}}">>> Library Book</a></li>
+								</ul>
+							</li>
+							<!-- <li class="sidebar-item">
+								<a href="#forms-1" data-toggle="collapse" class="sidebar-link collapsed">
+						<i class="align-middle" data-feather="video"></i> <span style="font-family:Times New Roman; font-size: 18px;" class="align-middle">Gmeet Live Classes</span>
+					</a>
+								<ul id="forms-1" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+									<li class="sidebar-item"><a class="sidebar-link" href="/googlemeettimetable">>> Google Meet Timetable</a></li>
+									<li class="sidebar-item"><a class="sidebar-link" href="/onlineclassdet">>> Online Class</a></li>
+								</ul>
+							</li>
+		
+							<li class="sidebar-item">
+								<a href="#datatables-1" data-toggle="collapse" class="sidebar-link collapsed">
+						<i class="align-middle" data-feather="download"></i> <span style="font-family:Times New Roman; font-size: 18px;" class="align-middle">Download Center</span>
+					</a>
+								<ul id="datatables-1" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+									<li class="sidebar-item"><a class="sidebar-link" href="/downloattencecerif">>> Attendance Certificate</a></li>
+									<li class="sidebar-item"><a class="sidebar-link" href="/downlobonafidecert">>> Bonafide Certificate</a></li>
+								</ul>
+							</li>
+		
+							<li class="sidebar-item">
+								<a href="#pages-1" data-toggle="collapse" class="sidebar-link collapsed">
+					  <i class="align-middle" data-feather="edit"></i> <span style="font-family:Times New Roman; font-size: 18px;" class="align-middle">Feedback</span>
+					</a>
+								<ul id="pages-1" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+									<li class="sidebar-item"><a class="sidebar-link" href="/studentfeedback">>> students</a></li>
+									<li class="sidebar-item"><a class="sidebar-link" href="/teacherfeedback">>> Teacher</a></li>
+								</ul>
+							</li> -->
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="main">
+			<nav class="navbar navbar-expand navbar-light navbar-bg">
+				<a class="sidebar-toggle">
+          <i class="hamburger align-self-center"></i>
+        </a>
+
+				<form class="d-none d-sm-inline-block">
+					<div class="input-group input-group-navbar">
+						<input type="text" class="form-control" placeholder="Search projects…" aria-label="Search">
+						<div class="input-group-append">
+							<button class="btn" type="button">
+                <i class="align-middle" data-feather="search"></i>
+              </button>
+						</div>
+					</div>
+				</form>
+
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<li class="nav-item dropdown">
+						</li>
+						<li class="nav-item dropdown">
+							
+					
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-toggle="dropdown">
+                <i class="align-middle" data-feather="settings"></i>
+              </a>
+
+							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
+                <img src="{% static 'dashboard/img/avatars/adm.webp' %}" class="avatar img-fluid rounded-circle mr-1" alt="Chris Wood" /> <span class="text-dark"><i style="color:red; font-family:Times New Roman; font-size: 20px;">Admin</span></i>
+              </a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="/profile/{{logger_data.id}}" ><i class="align-middle mr-1" data-feather="user"></i> Profile</a>
+								<a class="dropdown-item" href="/login"><i class="align-middle mr-1" data-feather="log-out"></i> Sign out</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main class="content">
+				<div class="container-fluid p-0">
+
+					<div class="row mb-2 mb-xl-3">
+						<div class="col-auto d-none d-sm-block">
+							<h3 style="font-family:Times New Roman; font-size: 30px;"></h3>
+						</div>
+
+						<div class="col-auto ml-auto text-right mt-n1">
+							<span class="dropdown mr-2">
+      
+      
+    </span>
+
+	
+							<button class="btn btn-primary shadow-sm">
+      <i class="align-middle" data-feather="refresh-cw">&nbsp;</i>
+    </button>
+						</div>
+					</div>
+					<div class="row">
+						
+							
+								<div class="card-body p-0 d-flex flex-fill">
+									<div class="row no-gutters w-100">
+										
+											<div class="illustration-text p-30 m-0">
+												<h4 style="color: rgb(136, 10, 10); font-family:Times New Roman; font-size: 30px;">Overview</h4>
+												<p style="color: rgb(51, 46, 46); font-family:Times New Roman; font-size: 18px;" >College celebrated its centenary in 1945 and sesquicentenary in 1995. It acquired Five Star status awarded by the National Assessment and Accreditation Council (NAAC) in 2014, was recognised by UGC as a College with Potential for Excellence (CPE) in 2004, and was accredited with A Grade [3rd Cycle] by NAAC in 2012. The college is owned by the Society a body registered under Societies Regulation Act (1860), having its office at Tiruchirappalli. And it has the heritage college status as one among 12 colleges in India in 2016, which is given by the Government of India. Around 30 Jesuits serve on the staff. It acquired the A++ Rank awarded by the recent National Assessment and Accreditation Council (NAAC) in 2019.</p>
+											</div>
+										
+										<div class="col-6 align-self-end text-right">
+											<img src="{% static 'dashboard/img/illustrations/book.png' %}" alt="Customer Support" class="img-fluid illustration-img">
+										</div>
+									</div>
+								</div>
+
+							
+									<div class="col-3">
+										<div class="card">
+											<div class="card-body bg-warning text-white">
+												<div class="row">
+													<div class="col-6">
+														<i class="fa fa-home fa-3x"></i>
+													</div>
+													<div class="col-6">
+														<div class="card-content"><i style="font-family:Times New Roman; font-size: 16px;">Departments</div></i>
+														<h6>20</h6>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-3">
+										<div class="card ">
+											<div class="card-body bg-primary text-white">
+												<div class="row">
+													<div class="col-6">
+														<i class="fa fa-address-card fa-3x"></i>
+													</div>
+													<div class="col-6">
+														<div class="card-content"><i style="font-family:Times New Roman; font-size: 17px;">Students</div></i>
+														<h6>2000</h6>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-3">
+										<div class="card">
+											<div class="card-body bg-success text-white">
+												<div class="row">
+													<div class="col-6">
+														<i class="fa fa-share fa-3x"></i>
+													</div>
+													<div class="col-6">
+														<div class="card-content"><i style="font-family:Times New Roman; font-size: 20px;">staff</div></i>
+														<h6>300</h6>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-3">
+										<div class="card">
+											<div class="card-body bg-danger text-white">
+												<div class="row">
+													<div class="col-6">
+														<i class="fa fa-book fa-3x"></i>
+													</div>
+													<div class="col-6">
+														<div class="card-content"><i style="font-family:Times New Roman; font-size: 20px;">librarie</div></i>
+														<h6>3000 Books</h6>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+						<div class="col-12 col-lg-6">
+							<div class="card">
+								<div class="card-header">
+									<h5 style="font-family:Times New Roman; font-size: 28px;" class="card-title">Student Admission</h5>
+									<h6 style="font-family:Times New Roman; font-size: 16px;" class="card-subtitle text-muted">A bar chart is the Student Admission.</h6>
+								</div>
+								<div class="card-body">
+									<div class="chart w-100">
+										<div id="apexcharts-bar"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-lg-6">
+							<div class="card">
+								<div class="card-header">
+									<h5 style="font-family:Times New Roman; font-size: 28px;" class="card-title">Fees Collection</h5>
+									<h6 style="font-family:Times New Roman; font-size: 16px;" class="card-subtitle text-muted">Fees Collection </h6>
+								</div>
+								<div class="card-body">
+									<div class="chart w-100">
+										<div id="apexcharts-column"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-sm-6 col-xxl d-flex">
+							<div class="card flex-fill">
+								<div class="card-body py-4">
+									<div class="media">
+										<div class="media-body">
+											<h3 style="font-family:Times New Roman; font-size: 28px;" class="mb-2">2000</h3>
+											<p class="mb-2">Students</p>
+											<div class="mb-0">
+												<span class="badge badge-soft-info mr-2"> <i class="mdi mdi-arrow-bottom-right"></i> 80% </span>
+												<span class="text-muted"></span>
+											</div>
+										</div>
+										<div class="d-inline-block ml-3">
+											<div class="stat">
+												<i class="align-middle text-" data-feather="users"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-sm-6 col-xxl d-flex">
+							<div class="card flex-fill">
+								<div class="card-body py-4">
+									<div class="media">
+										<div class="media-body">
+											<h3 style="font-family:Times New Roman; font-size: 28px;" class="mb-2">$ 150.700</h3>
+											<p class="mb-2">Total Revenue</p>
+											<div class="mb-0">
+												<span class="badge badge-soft-success mr-2"> <i class="mdi mdi-arrow-bottom-right"></i> 70.65% </span>
+												<span class="text-muted">Since last Year</span>
+											</div>
+										</div>
+										<div class="d-inline-block ml-3">
+											<div class="stat">
+												<i class="align-middle text-info" data-feather="dollar-sign"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-12 col-lg-6">
+							<div class="card">
+								<div class="card-header">
+									<h5 style="font-family:Times New Roman; font-size: 28px;" class="card-title">Semester Result</h5>
+									<h6 style="font-family:Times New Roman; font-size: 18px;" class="card-subtitle text-muted">Area charts are used to represent Exam Result.</h6>
+								</div>
+								<div class="card-body">
+									<div class="chart w-100">
+										<div id="apexcharts-area"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-lg-6 d-flex">
+							<div class="card flex-fill w-100">
+								
+										<div class="card-header">
+											<div class="card-actions float-right">
+												<div class="dropdown show">
+													<a href="#" data-toggle="dropdown" data-display="static">
+					  <i class="align-middle" data-feather="more-horizontal"></i>
+					</a>
+		
+													<div class="dropdown-menu dropdown-menu-right">
+														<a class="dropdown-item" href="#">Action</a>
+														<a class="dropdown-item" href="#">Another action</a>
+														<a class="dropdown-item" href="#">Something else here</a>
+													</div>
+												</div>
+											</div>
+											<h5 style="font-family:Times New Roman; font-size: 28px;" class="card-title mb-0"> Academiez Places</h5>
+										</div>
+										<div class="card-body p-2">
+											<div id="world_map" style="height:279px;"></div>
+										</div>
+								
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-12 col-lg-6 col-xl-4 d-flex">
+							<div class="card flex-fill">
+								<div class="card-header">
+									<div class="card-actions float-right">
+										<div class="dropdown show">
+											<a href="#" data-toggle="dropdown" data-display="static">
+              <i class="align-middle" data-feather="more-horizontal"></i>
+            </a>
+
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#">Action</a>
+												<a class="dropdown-item" href="#">Another action</a>
+												<a class="dropdown-item" href="#">Something else here</a>
+											</div>
+										</div>
+									</div>
+									<h5 style="font-family:Times New Roman; font-size: 28px;" class="card-title mb-0">Calendar</h5>
+								</div>
+								<div class="card-body d-flex">
+									<div class="align-self-center w-100">
+										<div class="chart">
+											<div id="datetimepicker-dashboard"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-xl-4 d-none d-xl-flex">
+							<div class="card flex-fill w-100">
+								<div class="card-header">
+									<div class="card-actions float-right">
+										<div class="dropdown show">
+											<a href="#" data-toggle="dropdown" data-display="static">
+              <i class="align-middle" data-feather="more-horizontal"></i>
+            </a>
+
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#">Action</a>
+												<a class="dropdown-item" href="#">Another action</a>
+												<a class="dropdown-item" href="#">Something else here</a>
+											</div>
+										</div>
+									</div>
+									<h5 style="font-family:Times New Roman; font-size: 28px;" class="card-title mb-0">College History</h5>
+								</div>
+								<div class="card-body d-flex">
+									<div class="align-self-center w-100">
+										<div class="py-3">
+											<div class="chart chart-xs">
+												<canvas id="chartjs-dashboard-pie"></canvas>
+											</div>
+										</div>
+
+										<table class="table mb-0">
+											<thead>
+												<tr>
+													<th>Year</th>
+													<th class="text-right">Awards</th>
+													<th class="text-right">Date</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><i class="fas fa-square-full text-primary"></i> 2010</td>
+													<td class="text-right">Academics awards</td>
+													<td class="text-right text-success">20 Jun 2010</td>
+												</tr>
+												<tr>
+													<td><i class="fas fa-square-full text-warning"></i>2016</td>
+													<td class="text-right">Best Academics</td>
+													<td class="text-right text-success">22 Dec 2015</td>
+												</tr>
+												<tr>
+													<td><i class="fas fa-square-full text-danger"></i> 2018</td>
+													<td class="text-right">National awards</td>
+													<td class="text-right text-success">20 may 2018</td>
+												</tr>
+												<tr>
+													<td><i class="fas fa-square-full text-dark">2020</i> </td>
+													<td class="text-right">Second level Academics</td>
+													<td class="text-right text-success">4 may 2020</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-lg-6 col-xl-4 d-flex">
+							<div class="card flex-fill w-100">
+								<div class="card-header">
+									<div class="card-actions float-right">
+										<div class="dropdown show">
+											<a href="#" data-toggle="dropdown" data-display="static">
+              <i class="align-middle" data-feather="more-horizontal"></i>
+            </a>
+
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#">Action</a>
+												<a class="dropdown-item" href="#">Another action</a>
+												<a class="dropdown-item" href="#">Something else here</a>
+											</div>
+										</div>
+									</div>
+									<h5 style="font-family:Times New Roman; font-size: 28px;" class="card-title mb-0">College Events</h5>
+								</div>
+								<div class="card-body">
+									<ul class="timeline">
+										<li class="timeline-item">
+											<strong>Department of Physics</strong>
+											<span class="float-right text-muted text-sm">23 December</span>
+											<p>International Conference On Advanced Materials</p>
+										</li>
+										<li class="timeline-item">
+											<strong>Department of Mathematics</strong>
+											<span class="float-right text-muted text-sm">27 December</span>
+											<p>International Conference On Mathematical Sciences And Applications</p>
+										</li>
+										<li class="timeline-item">
+											<strong>Department of Data Science</strong>
+											<span class="float-right text-muted text-sm">26 December</span>
+											<p>Aptitude training to crack NET /SET Examinations</p>
+										</li>
+										<li class="timeline-item">
+											<strong>COE - Semester Arrear Examinations</strong>
+											<span class="float-right text-muted text-sm">27 December</span>
+											<p>December 2021 - Question Paper Pattern</p>
+										</li>
+										<li class="timeline-item">
+											<strong>Department of Mathematics</strong>
+											<span class="float-right text-muted text-sm">27 December</span>
+											<p>International Conference On Mathematical Sciences And Applications</p>
+										</li>
+										<li class="timeline-item">
+											<strong>Department of Data Science</strong>
+											<span class="float-right text-muted text-sm">26 December</span>
+											<p>Aptitude training to crack NET /SET Examinations</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="card flex-fill">
+						<div class="card-header">
+							<div class="card-actions float-right">
+								<div class="dropdown show">
+									<a href="#" data-toggle="dropdown" data-display="static">
+          <i class="align-middle" data-feather="more-horizontal"></i>
+        </a>
+
+									<div class="dropdown-menu dropdown-menu-right">
+										<a class="dropdown-item" href="#">Action</a>
+										<a class="dropdown-item" href="#">Another action</a>
+										<a class="dropdown-item" href="#">Something else here</a>
+									</div>
+								</div>
+							</div>
+							<h5 style="font-family:Times New Roman; font-size: 28px;" class="card-title mb-0"><p>Students Status</h5>
+						</div>
+						<table id="datatables-dashboard-projects" class="table table-striped my-0">
+							<thead>
+								<tr>
+									<th> Student Name </th>
+									<th> D.No </th>
+									<th> College fees </th>
+									<th> Mini Project </th>
+									<th> Payment Mode </th>
+									<th> Payment Date </th>
+									<th> Payment Status </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Alex</td>
+									<td> 19PCA135 </td>
+									<td> $21,500 </td>
+									<td><span class="badge badge-success">Done</span></td>
+									<td> Credit card </td>
+									<td> 05 Dec 2021 </td>
+									<td>Approved</td>
+								</tr>
+								<tr>
+									<td>Priya</td>
+									<td> 19PCA120  </td>
+                            		<td> $21,500 </td>
+									<td><span class="badge badge-danger">Cancelled</span></td>
+									<td> Cash on delivered</td>
+									<td> 10 Dec 2021 </td>
+									<td>Rejected</td>
+								</tr>
+								<tr>
+									<td>Peter</td>
+									<td> 19PEN119</td>
+                            		<td> $21,500 </td>
+									<td><span class="badge badge-success">Done</span></td>
+									<td> Credit card </td>
+									<td> 10 Dec 2021 </td>
+									<td>Approved</td>
+								</tr>
+								<tr>
+									<td>Sheva</td>
+									<td> 19PPH143</td>
+                            		<td> $21,500 </td>
+									<td><span class="badge badge-warning">In progress</span></td>
+									<td> Cash on delivered</td>
+									<td> 10 Dec 2021 </td>
+									<td>APending</td>
+								</tr>
+								<tr>
+									<td>Dinesh</td>
+									<td> 19PCA108</td>
+                            		<td> $21,500 </td>
+									<td><span class="badge badge-success">Done</span></td>
+									<td> Credit card </td>
+									<td> 10 Dec 2021 </td>
+									<td>Approved</td>
+								</tr>
+								<tr>
+									<td>Rani</td>
+									<td> 19PPH108</td>
+                            		<td> $21,500 </td>
+									<td><span class="badge badge-success">Done</span></td>
+									<td> Cash on delivered</td>
+									<td> 10 Dec 2021 </td>
+									<td>Approved</td>
+								</tr>
+								<tr>
+									<td>Babu</td>
+									<td> 19PMA124</td>
+                            		<td> $21,500 </td>
+									<td><span class="badge badge-success">Done</span></td>
+									<td> Credit card </td>
+									<td> 10 Dec 2021 </td>
+									<td>Approved</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</main>
+
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-left">
+							<ul class="list-inline">
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Support</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Help Center</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Privacy</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Terms of Service</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Coperight 2021</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-6 text-right">
+							<p class="mb-0">
+								2021 Academicz 1.0
+							</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+	<script src="{% static 'dashboard/js/app.js' %}"></script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			// Bar chart
+			var options = {
+				chart: {
+					height: 350,
+					type: "bar",
+					stacked: true,
+				},
+				plotOptions: {
+					bar: {
+						horizontal: true,
+					},
+				},
+				stroke: {
+					width: 1,
+					colors: ["#fff"]
+				},
+				series: [{
+					name: "UG",
+					data: [44, 55, 41, 37, 22, 43, 21]
+				}, {
+					name: "PG",
+					data: [53, 32, 33, 52, 13, 43, 32]
+				}, {
+					name: "Ph.D",
+					data: [12, 17, 11, 9, 15, 11, 20]
+				}],
+				xaxis: {
+					categories: [2021, 2020, 2019, 2018, 2015, 2014, 2010],
+					labels: {
+						formatter: function(val) {
+							return val + ""
+						}
+					}
+				},
+				yaxis: {
+					title: {
+						text: undefined
+					},
+				},
+				tooltip: {
+					y: {
+						formatter: function(val) {
+							return val + "K"
+						}
+					}
+				},
+				fill: {
+					opacity: 1
+				},
+				legend: {
+					position: "top",
+					horizontalAlign: "left",
+					offsetX: 40
+				}
+			}
+			var chart = new ApexCharts(
+				document.querySelector("#apexcharts-bar"),
+				options
+			);
+			chart.render();
+		});
+	</script>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		// Column chart
+		var options = {
+			chart: {
+				height: 350,
+				type: "bar",
+			},
+			plotOptions: {
+				bar: {
+					horizontal: false,
+					endingShape: "rounded",
+					columnWidth: "55%",
+				},
+			},
+			dataLabels: {
+				enabled: false
+			},
+			stroke: {
+				show: true,
+				width: 2,
+				colors: ["transparent"]
+			},
+			series: [{
+				name: "I Year",
+				data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+			}, {
+				name: "II Year",
+				data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+			}, {
+				name: "III Year",
+				data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+			}],
+			xaxis: {
+				categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+			},
+			yaxis: {
+				title: {
+					text: "(Revenue)"
+				}
+			},
+			fill: {
+				opacity: 1
+			},
+			tooltip: {
+				y: {
+					formatter: function(val) {
+						return "$ " + val + " thousands"
+					}
+				}
+			}
+		}
+		var chart = new ApexCharts(
+			document.querySelector("#apexcharts-column"),
+			options
+		);
+		chart.render();
+	});
+</script>
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		var markers = [{
+				coords: [31.230391, 121.473701],
+				name: "Shanghai"
+			},
+			{
+				coords: [39.904202, 116.407394],
+				name: "Beijing"
+			},
+			{
+				coords: [28.704060, 77.102493],
+				name: "Delhi"
+			},
+			{
+				coords: [6.524379, 3.379206],
+				name: "Lagos"
+			},
+			{
+				coords: [39.343357, 117.361649],
+				name: "Tianjin"
+			},
+			{
+				coords: [24.860735, 67.001137],
+				name: "Karachi"
+			},
+			{
+				coords: [41.008240, 28.978359],
+				name: "Istanbul"
+			},
+			{
+				coords: [35.689487, 139.691711],
+				name: "Tokyo"
+			},
+			{
+				coords: [23.129110, 113.264381],
+				name: "Guangzhou"
+			},
+			{
+				coords: [19.075983, 72.877655],
+				name: "Mumbai"
+			},
+			{
+				coords: [40.7127837, -74.0059413],
+				name: "New York"
+			},
+			{
+				coords: [34.052235, -118.243683],
+				name: "Los Angeles"
+			},
+			{
+				coords: [41.878113, -87.629799],
+				name: "Chicago"
+			},
+			{
+				coords: [29.760427, -95.369804],
+				name: "Houston"
+			},
+			{
+				coords: [33.448376, -112.074036],
+				name: "Phoenix"
+			},
+			{
+				coords: [51.507351, -0.127758],
+				name: "London"
+			},
+			{
+				coords: [48.856613, 2.352222],
+				name: "Paris"
+			},
+			{
+				coords: [55.755825, 37.617298],
+				name: "Moscow"
+			},
+			{
+				coords: [40.416775, -3.703790],
+				name: "Madrid"
+			}
+		];
+		var map = new JsVectorMap({
+			map: "world",
+			selector: "#world_map",
+			zoomButtons: true,
+			markers: markers,
+			markerStyle: {
+				initial: {
+					r: 9,
+					stroke: window.theme.white,
+					strokeWidth: 7,
+					stokeOpacity: .4,
+					fill: window.theme.primary
+				},
+				hover: {
+					fill: window.theme.primary,
+					stroke: window.theme.primary
+				}
+			},
+			regionStyle: {
+				initial: {
+					fill: window.theme["gray-200"]
+				}
+			},
+			zoomOnScroll: false
+		});
+		window.addEventListener("resize", () => {
+			map.updateSize();
+		});
+		setTimeout(function() {
+			map.updateSize();
+		}, 250);
+	});
+</script>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		// Area chart
+		var options = {
+			chart: {
+				height: 350,
+				type: "area",
+			},
+			dataLabels: {
+				enabled: false
+			},
+			stroke: {
+				curve: "smooth"
+			},
+			series: [{
+				name: "Pass ",
+				data: [31, 40, 28, 51, 42, 109, 100]
+			}, {
+				name: "Fail",
+				data: [11, 32, 45, 32, 34, 52, 41]
+			}],
+			xaxis: {
+				type: "datetime",
+				categories: ["2018-09-19T00:00:00", "2018-09-19T01:30:00", "2018-09-19T02:30:00", "2018-09-19T03:30:00", "2018-09-19T04:30:00", "2018-09-19T05:30:00",
+					"2018-09-19T06:30:00"
+				],
+			},
+			tooltip: {
+				x: {
+					format: "dd/MM/yy HH:mm"
+				},
+			}
+		}
+		var chart = new ApexCharts(
+			document.querySelector("#apexcharts-area"),
+			options
+		);
+		chart.render();
+	});
+</script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			// Bar chart
+			new Chart(document.getElementById("chartjs-dashboard-bar"), {
+				type: "bar",
+				data: {
+					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+					datasets: [{
+						label: "Last year",
+						backgroundColor: window.theme.primary,
+						borderColor: window.theme.primary,
+						hoverBackgroundColor: window.theme.primary,
+						hoverBorderColor: window.theme.primary,
+						data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
+						barPercentage: .325,
+						categoryPercentage: .5
+					}, {
+						label: "This year",
+						backgroundColor: window.theme["primary-light"],
+						borderColor: window.theme["primary-light"],
+						hoverBackgroundColor: window.theme["primary-light"],
+						hoverBorderColor: window.theme["primary-light"],
+						data: [69, 66, 24, 48, 52, 51, 44, 53, 62, 79, 51, 68],
+						barPercentage: .325,
+						categoryPercentage: .5
+					}]
+				},
+				options: {
+					maintainAspectRatio: false,
+					cornerRadius: 15,
+					legend: {
+						display: false
+					},
+					scales: {
+						yAxes: [{
+							gridLines: {
+								display: false
+							},
+							stacked: false,
+							ticks: {
+								stepSize: 20
+							},
+							stacked: true,
+						}],
+						xAxes: [{
+							stacked: false,
+							gridLines: {
+								color: "transparent"
+							},
+							stacked: true,
+						}]
+					}
+				}
+			});
+		});
+	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			$("#datetimepicker-dashboard").datetimepicker({
+				inline: true,
+				sideBySide: false,
+				format: "L"
+			});
+		});
+	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			// Pie chart
+			new Chart(document.getElementById("chartjs-dashboard-pie"), {
+				type: "pie",
+				data: {
+					labels: ["Direct", "Affiliate", "E-mail", "Other"],
+					datasets: [{
+						data: [2602, 1253, 541, 1465],
+						backgroundColor: [
+							window.theme.primary,
+							window.theme.warning,
+							window.theme.danger,
+							"#E8EAED"
+						],
+						borderWidth: 5,
+						borderColor: window.theme.white
+					}]
+				},
+				options: {
+					responsive: !window.MSInputMethodContext,
+					maintainAspectRatio: false,
+					cutoutPercentage: 70,
+					legend: {
+						display: false
+					}
+				}
+			});
+		});
+	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			$("#datatables-dashboard-projects").DataTable({
+				pageLength: 6,
+				lengthChange: false,
+				bFilter: false,
+				autoWidth: false
+			});
+		});
+	</script>
+
+</body>
+
+</html>

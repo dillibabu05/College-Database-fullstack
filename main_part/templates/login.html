@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Bootstrap 4 Admin &amp; Dashboard Template">
+	<meta name="author" content="Bootlab">
+
+	<title>ACADEMIEZ1.0 (Education Software)</title>
+
+	<link rel="canonical" href="https://appstack.bootlab.io/pages-sign-up.html" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="{% static 'landing/css/style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    
+</head>
+<body>
+    <div class="registration-form">
+        <form action="/login_form_submisson" method="POST">
+            {% csrf_token %}
+            <div class="form-icon">
+                <img src="{% static 'landing/icon/education.png' %}" alt="" class="responsive-img valign profile-image-login">
+            </div>
+            <div class="first">
+                <h2 style="text-align: center; color: rgb(245, 126, 16);" ><i style="font-family:Times New Roman; font-size: 36px;font-variant: small-caps;
+                    text-shadow: 2px 2px #27e046;
+                    font-family: 'Playfair Display', serif;">LogIn</i></h2>
+            </div>
+            {% for i in messages%}
+            {% if 'invalid' in i.tags %}
+            <h4 style="color: red;">{{i}}</h4>
+            {% endif %}
+            {% endfor %}
+            <div class="form-group">
+                <label class="col-form-label col-sm-10 text-sm-left"><i style="font-family:Times New Roman; font-size: 18px;">Username:</label></i>
+                <input type="text" class="form-control item" id="username" placeholder="Username" name="user_name">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label col-sm-10 text-sm-left"><i style="font-family:Times New Roman; font-size: 18px;">Password:</label></i>
+                <input type="password" class="form-control item" id="password" placeholder="Password" name="password">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-block create-account" id="login_form"><i style="font-family:Times New Roman; font-size: 25px;">Login</button></i>
+            </div>
+            <h5 style="text-align: center;"><a href="/register">Don't have account?</h5></a>
+        </form>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="{% static 'landing/js/script.js' %}"></script>
+
+
+    <script>
+        $("#login_form").click(function(){
+            $(".error").hide();
+            var hasError=false;
+            var username=$("#username").val();
+            var password=$("#password").val();
+            if(username==''){
+                $("#username").after('<span class="error" style="color:red">please enter username</span>');
+                hasError=true;
+            }
+            if(password==''){
+                $("#username").after('<span class="error" style="color:red">please enter password</span>');
+                hasError=true;
+            }
+            if(hasError==true){
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>

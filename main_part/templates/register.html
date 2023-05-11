@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Bootstrap 4 Admin &amp; Dashboard Template">
+	<meta name="author" content="Bootlab">
+
+	<title>ACADEMIEZ1.0 (Education Software)</title>
+
+	<link rel="canonical" href="https://appstack.bootlab.io/pages-sign-up.html" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="{% static 'landing/css/style.css' %}">
+</head>
+<body>
+    <div class="registration-form">
+        <form action="/register_form_submission" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="form-icon">
+                <img src="{% static 'landing/icon/education.png' %}" alt="" class="responsive-img valign profile-image-login">
+            </div>
+            <div class="first">
+                <h2 style="text-align: center; color: rgb(245, 126, 16); font-variant: small-caps;
+                text-shadow: 2px 2px #0be64d;
+                font-family: 'Playfair Display', serif;"><i style="font-family:Times New Roman; font-size: 36px;">Registration Form</i></h2>
+                <!-- alert message -->
+                {% for i in messages%}
+                {% if 'already' in i.tags %}
+                <h4 style="color: red;">{{i}}</h4>
+                {% endif %}
+                {% endfor %}
+            </div>
+            
+            <div class="form-group">
+                <label class="col-form-label col-sm-10 text-sm-left"><i style="font-family:Times New Roman; font-size: 18px;">Username:</label></i>
+                <input type="text" class="form-control item" id="user_name" placeholder="Username" name="user_name" required minlength="3" maxlength="10">
+                <h6 id="demo"> </h6>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label col-sm-10 text-sm-left"><i style="font-family:Times New Roman; font-size: 18px;">Password:</label></i>
+                <input type="password" class="form-control item" id="password" placeholder="Password" name="password">
+                <h6 id="demo"> </h6>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label col-sm-10 text-sm-left"><i style="font-family:Times New Roman; font-size: 18px;">Email:</label></i>
+                <input type="text" class="form-control item" id="email_id" placeholder="Email" name="email_id">
+                <h6 id="demo"> </h6>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label col-sm-10 text-sm-left"><i style="font-family:Times New Roman; font-size: 18px;">Phone No:</label></i>
+                <input type="text" class="form-control item" id="phone-number" placeholder="Phone Number">
+                <h6 id="demo"> </h6>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label col-sm-10 text-sm-left"><i style="font-family:Times New Roman; font-size: 18px;">Profile:</label></i>
+                <input type="file" class="form-control item" id="profile_picture"  name="profile_picture">
+                <h6 id="demo"> </h6>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-block create-account" onclick="btn_1"><i style="font-family:Times New Roman; font-size: 26px;">Register</button></i>
+            </div>
+            <h5 style="text-align: center;"><a href="/login">Already you have account?</h5></a>
+        </form>
+    </div>
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="{% static 'landing/js/script.js' %}"></script> -->
+</body>
+</html>
